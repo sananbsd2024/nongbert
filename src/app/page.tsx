@@ -14,7 +14,7 @@ export default async function Home() {
         <h1 className="text-5xl">You Shall Not Pass!</h1>
       )} */}
 
-      <div className="min-h-screen flex flex-col md:flex-row">
+      <div className="w-full h-full min-h-screen flex flex-col md:flex-row">
         {/* ส่วนซ้าย */}
         <div className="w-full md:w-1/4 bg-gray-200 text-white p-4">
           {/* <h2 className="text-xl font-bold">Left Sidebar</h2> */}
