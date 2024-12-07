@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function MenuListPage() {
   return (
-    <div className="bg-gray-300 p-4">
+    <div className="p-4">
       <div className="divide-y divide-gray-400">
         <a href="" className="font-bold text-blue-500">
           ข้อมูลพื้นฐาน
