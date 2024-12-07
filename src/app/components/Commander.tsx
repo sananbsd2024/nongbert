@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export default function CommanderPage() {
     return (
-        <div className="bg-gray-200 p-4">
+        <div className="p-4">
         <div className="divide-y divide-gray-400">
             <div className='container'>
                 <Image
