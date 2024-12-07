@@ -6,6 +6,7 @@ import FooterPage from "./components/Footer";
 
 const inter = Inter({ subsets: ['latin'] })
 
+export const metadata = {
   title: "โรงเรียนบ้านหนองเบิด",
   description:
     "โรงเรียนบ้านหนองเบิด ตำบลเมืองน้อย อำเภอธวัชบุรี จังหวัดร้อยเอ็ด",
