@@ -14,7 +14,7 @@ interface News {
 }
 
 async function fetchNews(): Promise<News[]> {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://nongberd-v3.vercel.app';
   const res = await fetch(`${baseUrl}/api/newssell`, { cache: 'no-store' });
 
   if (!res.ok) {
