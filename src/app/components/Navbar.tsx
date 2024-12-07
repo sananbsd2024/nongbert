@@ -24,8 +24,8 @@ const Navbar = () => {
   ];
 
   return (
-    <div className='bg-gray-100 flex justify-between 
-    items-center h-24 max-w-[1240px] mx-auto px-4 text-blue-800'>
+    <div className='bg-gray-200 flex justify-between w-full h-full
+    items-center mx-auto px-4 text-blue-800 rounded-xl'>
       {/* Logo */}
       <h1 className='w-full text-3xl font-bold text-[#00df9a]'>Nong Berd</h1>
 
