@@ -33,7 +33,7 @@ const PageViews = () => {
 
   return (
     
-    <div className="bg-blue-500 text-white p-4 rounded">
+    <div className="text-blue-700 p-4 border-2 border-indigo-500/100">
         <div className="divide-y divide-gray-400">
         {/* <h1 className="text-2xl font-bold mb-4">Welcome to Our Website</h1> */}
         {views !== null ? (
