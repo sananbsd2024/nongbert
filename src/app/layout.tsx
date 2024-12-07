@@ -7,8 +7,9 @@ import FooterPage from "./components/Footer";
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'NextAuth Tutorial',
-  description: 'Learn NextAuth.js by Dave Gray',
+  title: 'โรงเรียนบ้านหนองเบิด',
+  description: 'โรงเรียนบ้านหนองเบิด ตำบลเมืองน้อย อำเภอธวัชบุรี จังหวัดร้อยเอ็ด',
+  keywords: 'Nongberd School, โรงเรียนบ้านหนองเบิด, หนองเบิด',
 }
 
 export default function RootLayout({
