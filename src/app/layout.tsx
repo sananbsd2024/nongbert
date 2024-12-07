@@ -2,13 +2,15 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import Navbar from './components/Navbar'
 import AuthProvider from './context/AuthProvider'
+import FooterPage from "./components/Footer";
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
-  title: 'NextAuth Tutorial',
-  description: 'Learn NextAuth.js by Dave Gray',
-}
+  title: "โรงเรียนบ้านหนองเบิด",
+  description:
+    "โรงเรียนบ้านหนองเบิด ตำบลเมืองน้อย อำเภอธวัชบุรี จังหวัดร้อยเอ็ด",
+  keywords: "Nongberd School, โรงเรียนบ้านหนองเบิด, หนองเบิด",
+};
 
 export default function RootLayout({
   children,
@@ -23,6 +25,7 @@ export default function RootLayout({
           <main className="flex justify-center items-start p-6 min-h-screen">
             {children}
           </main>
+        <FooterPage />
         </AuthProvider>
       </body>
     </html>
