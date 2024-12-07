@@ -1,6 +1,7 @@
 import { options } from "./api/auth/[...nextauth]/options"
 import { getServerSession } from "next-auth/next"
 import LeftSidebarPage from "./components/LeftSidebar";
+import RightSidebarPage from "./components/RightSidebar";
 
 export default async function Home() {
   const session = await getServerSession(options)
@@ -35,7 +36,7 @@ export default async function Home() {
         <div className="w-full md:w-1/4 bg-gray-200 text-white p-4">
           {/* <h2 className="text-xl font-bold">Left Sidebar</h2> */}
           <p>This is the left sidebar.</p>
-
+<RightSidebarPage />
           
         </div>
       </div>
