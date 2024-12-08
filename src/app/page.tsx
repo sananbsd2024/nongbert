@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth/next";
 import LeftSidebarPage from "./components/LeftSidebar";
 import RightContentAreaPage from "./components/RightContentArea";
 import RightSidebarPage from "./components/RightSidebar";
+import DirectorList from "./EmployeeList/DirectorList";
 
 export default async function Home() {
   const session = await getServerSession(options);
@@ -21,7 +22,7 @@ export default async function Home() {
         <div className="w-full md:w-1/4 p-4">
           {/* <h2 className="text-xl font-bold">Left Sidebar</h2> */}
           {/* <p>This is the left sidebar.</p> */}
-
+          <DirectorList />
           <LeftSidebarPage />
         </div>
 
