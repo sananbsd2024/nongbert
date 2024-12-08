@@ -15,12 +15,12 @@ const Navbar = () => {
 
   // Array containing navigation items with links
   const navItems = [
-    { id: 1, text: 'Home', link: '/' },
-    { id: 2, text: 'Company', link: '/company' },
-    { id: 3, text: 'Resources', link: '/resources' },
-    { id: 4, text: 'About', link: '/about' },
-    { id: 5, text: 'Contact', link: '/contact' },
-    { id: 6, text: 'Logout', link: '/api/auth/signout' },
+    { id: 1, text: 'หน้าหลัก', link: '/' },
+    { id: 2, text: 'ข้อมูลทั่วไป', link: '/history' },
+    { id: 3, text: 'ทำเนียบผู้บริหาร', link: '/commands' },
+    { id: 4, text: 'ครูและบุคลากร', link: '/staff' },
+    { id: 5, text: 'ติดต่อเรา', link: '/contact' },
+    // { id: 6, text: 'Logout', link: '/api/auth/signout' },
   ];
 
   return (
@@ -34,7 +34,7 @@ const Navbar = () => {
         {navItems.map(item => (
           <li
             key={item.id}
-            className='p-3 hover:bg-[#00df9a] rounded-xl m-2 
+            className='p-2 hover:bg-[#00df9a] rounded-xl m-2 w-32
             cursor-pointer duration-300 hover:text-black'
           >
             <Link href={item.link}>{item.text}</Link>
@@ -62,7 +62,8 @@ const Navbar = () => {
         {navItems.map(item => (
           <li
             key={item.id}
-            className='p-4 border-b rounded-xl hover:bg-[#00df9a] duration-300 hover:text-black cursor-pointer border-gray-600'
+            className='p-2 border-b rounded-xl hover:bg-[#00df9a] 
+            duration-300 hover:text-black cursor-pointer border-gray-600'
           >
             <Link href={item.link}>{item.text}</Link>
           </li>
