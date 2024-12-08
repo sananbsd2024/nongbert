@@ -2,7 +2,7 @@
 // import BasicCard from './BasicCard';
 import MenuListPage from './Menulists';
 // import FacebookCardTailwind from './FacebookCardTailwind';
-import CommanderPage from './Commander';
+// import CommanderPage from './Commander';
 // import LoginPage from './LoginForm';
 // import DirectorProfile from './DirectorProfile';
 
@@ -11,7 +11,7 @@ export default function LeftSidebarPage() {
     return (
         <div>
             {/* <DirectorProfile /> */}
-            <CommanderPage />
+             {/* <CommanderPage /> */}
             <br />
             {/* <PageViews /> */}
             {/* <BasicCard /> */}
