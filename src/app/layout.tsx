@@ -11,6 +11,11 @@ export const metadata = {
   title: 'โรงเรียนบ้านหนองเบิด',
   description: 'โรงเรียนบ้านหนองเบิด ตำบลเมืองน้อย อำเภอธวัชบุรี จังหวัดร้อยเอ็ด',
   keywords: 'Nongberd School, โรงเรียนบ้านหนองเบิด, หนองเบิด',
+  icons: {
+    icon: '/logo.png', // Default favicon
+    shortcut: '/logo.ico', // Optional shortcut icon
+    apple: '/apple-touch-icon.png', // Optional Apple Touch icon
+  },
 }
 
 export default function RootLayout({
