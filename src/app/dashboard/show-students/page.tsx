@@ -7,7 +7,7 @@ type Student = {
   fristname: string;
   age: number;
   lastname: string;
-  g_level: string;
+  glevel: string;
   grade: string;
   createdAt: string;
 };
@@ -20,7 +20,7 @@ const ShowStudentsList = () => {
   useEffect(() => {
     const fetchStudents = async () => {
       try {
-        const response = await fetch('/api/students');
+        const response = await fetch('/api/student');
         const data = await response.json();
 
         if (data.success) {
@@ -63,7 +63,7 @@ const ShowStudentsList = () => {
                 <td className="border border-gray-400 px-4 py-2">{student.fristname}</td>
                 <td className="border border-gray-400 px-4 py-2">{student.lastname}</td>
                 <td className="border border-gray-400 px-4 py-2">{student.age}</td>
-                <td className="border border-gray-400 px-4 py-2">{student.g_level}</td>
+                <td className="border border-gray-400 px-4 py-2">{student.glevel}</td>
                 <td className="border border-gray-400 px-4 py-2">{student.grade}</td>
                 <td className="border border-gray-400 px-4 py-2">
                   {new Date(student.createdAt).toLocaleString()}
