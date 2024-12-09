@@ -38,8 +38,8 @@ export default async function NewsListPage() {
             key={news._id}
             className="bg-white shadow-md rounded-lg p-6 border border-gray-200"
           >
-            <h2 className="font-semibold mb-2">{news.title}</h2>
-            {/* <p className="text-gray-600 mb-4">{news.description}</p> */}
+            {/* <h2 className="font-semibold mb-2">{news.title}</h2> */}
+            <p className="text-gray-600 mb-4">{news.description}</p>
             <div>
               {/* <h3 className="font-medium text-gray-800">ไฟล์แนบ:</h3> */}
               <ul className="list-disc list-inside">
