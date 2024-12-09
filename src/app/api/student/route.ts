@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import { connectToDatabase } from '@/app/lib/mongoose';
-import Students from '@/app/models/Students';
+import User from '@/app/models/User';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   await connectToDatabase();
@@ -15,10 +15,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
 
       // Create a new user
-      const student = new Students({ firstname, lastname, role, grade, age });
-      await student.save();
+      const user = new User({ firstname, lastname, role, grade, age });
+      await user.save();
 
-      res.status(201).json({ success: true, message: 'Students added successfully!', user });
+      res.status(201).json({ success: true, message: 'User added successfully!', user });
     } catch (error) {
       res.status(500).json({ success: false, message: 'Internal server error', error });
     }
