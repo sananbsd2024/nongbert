@@ -99,9 +99,15 @@ const AddStudents = () => {
           >
 
             <option value="">เลือกหมวดหมู่</option>
-            <option value="director">ผู้อำนวยการ</option>
-            <option value="teacher">ครูผู้สอน</option>
-            <option value="staff">ภารโรง</option>
+            <option value="อนุบาล 1">อนุบาล 1</option>
+            <option value="อนุบาล 2">อนุบาล 2</option>
+            <option value="อนุบาล 3">อนุบาล 3</option>
+            <option value="ประถมศึกษาปีที่ 1">ประถมศึกษาปีที่ 1</option>
+            <option value="ประถมศึกษาปีที่ 2">ประถมศึกษาปีที่ 2</option>
+            <option value="ประถมศึกษาปีที่ 3">ประถมศึกษาปีที่ 3</option>
+            <option value="ประถมศึกษาปีที่ 4">ประถมศึกษาปีที่ 4</option>
+            <option value="ประถมศึกษาปีที่ 5">ประถมศึกษาปีที่ 5</option>
+            <option value="ประถมศึกษาปีที่ 6">ประถมศึกษาปีที่ 6</option>
           </select>
           
         </div>
