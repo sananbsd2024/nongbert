@@ -1,5 +1,11 @@
 import MenuListPage from "../components/Menulists";
 
+export const metadata = {
+  title: 'โรงเรียนบ้านหนองเบิด',
+  description: 'โรงเรียนบ้านหนองเบิด ตำบลเมืองน้อย อำเภอธวัชบุรี จังหวัดร้อยเอ็ด',
+  keywords: 'Nongberd School, โรงเรียนบ้านหนองเบิด, หนองเบิด',
+}
+
 export default function DashboardLayout({
   children,
 }: {
@@ -44,7 +50,7 @@ export default function DashboardLayout({
       <div className="w-full md:w-3/4 p-4">
         {/* <h2 className="text-xl font-bold">Right Content Area</h2> */}
         <main>{children}</main>
-        <p>This is the main content area on the right.</p>
+    {/*    <p>This is the main content area on the right.</p> */}
       </div>
     </div>
   );
