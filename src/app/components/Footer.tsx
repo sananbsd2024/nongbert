@@ -7,11 +7,11 @@ const FooterPage = () => {
         <div className="mx-auto w-full max-w-screen-xl p-4 md:py-8">
           <div className="sm:flex sm:items-center sm:justify-between">
             <a
-              href="https://flowbite.com/"
+              href="/"
               className="mb-4 flex items-center space-x-3 sm:mb-0 rtl:space-x-reverse"
             >
               <span className="self-center whitespace-nowrap text-2xl font-semibold dark:text-white">
-                Flowbite
+              NongBerd School™
               </span>
             </a>
             <ul className="mb-6 flex flex-wrap items-center text-sm font-medium text-gray-500 dark:text-gray-400 sm:mb-0">
