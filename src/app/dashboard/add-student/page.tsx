@@ -26,7 +26,7 @@ const AddStudent = () => {
     setSuccess('');
 
     try {
-      const res = await fetch('/api/student"', {
+      const res = await fetch('/api/students"', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
