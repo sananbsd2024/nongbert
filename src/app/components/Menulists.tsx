@@ -23,9 +23,6 @@ export default function MenuListPage() {
           <Link href="/employeelist" className="mx-2">
             บุคลากรทางการศึกษา
           </Link>
-          <Link href="/eservice" className="mx-2">
-            e_service
-          </Link>
           <Link href="/dashboard" className="mx-2">
             ผู้ดูแลระบบ
           </Link>
