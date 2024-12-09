@@ -6,7 +6,7 @@ export default function UserForm() {
   const [formData, setFormData] = useState({
     firstname: '',
     lastname: '',
-    role: '',
+    glevel: '',
     grade: '',
     age: '',
   });
@@ -21,7 +21,7 @@ export default function UserForm() {
     setStatus('');
 
     try {
-      const res = await fetch('/api/users', {
+      const res = await fetch('/api/student', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -30,7 +30,7 @@ export default function UserForm() {
       const data = await res.json();
       if (data.success) {
         setStatus('User added successfully!');
-        setFormData({ firstname: '', lastname: '', role: '', grade: '', age: '' });
+        setFormData({ firstname: '', lastname: '', glevel: '', grade: '', age: '' });
       } else {
         setStatus(data.message || 'Failed to add user.');
       }
@@ -61,9 +61,9 @@ export default function UserForm() {
         />
         <input
           type="text"
-          name="role"
-          placeholder="Role"
-          value={formData.role}
+          name="glevel"
+          placeholder="glevel"
+          value={formData.glevel}
           onChange={handleChange}
           required
         />
