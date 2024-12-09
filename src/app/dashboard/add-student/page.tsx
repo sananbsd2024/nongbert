@@ -8,7 +8,7 @@ const AddStudent = () => {
   const [form, setForm] = useState({
     fristname: '',
     lastname: '',
-    g_level: '',
+    role: '',
     grade: '',
     age: '',
   });
@@ -26,7 +26,7 @@ const AddStudent = () => {
     setSuccess('');
 
     try {
-      const res = await fetch('/api/students"', {
+      const res = await fetch('/api/student"', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,7 +41,7 @@ const AddStudent = () => {
         setForm({ 
           fristname: '',
           lastname: '',
-          g_level: '',
+          role: '',
           grade: '',
           age: '',
         });
@@ -91,8 +91,8 @@ const AddStudent = () => {
           <label className="block text-sm font-medium mb-1">เลือก</label>
           
           <select
-            name="g_level"
-            value={form.g_level}
+            name="role"
+            value={form.role}
             onChange={handleChange}
             required
             className="w-full p-2 border rounded"
