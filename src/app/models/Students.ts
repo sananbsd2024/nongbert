@@ -4,19 +4,19 @@ const StudensSchema = new Schema({
 
   fristname: {
     type: String,
-    required: [false, 'Fristname is required'], // ชื่อเป็นข้อมูลที่จำเป็น
+//    required: [false, 'Fristname is required'], // ชื่อเป็นข้อมูลที่จำเป็น
   },
   lastname: {
     type: String,
-    required: [false, 'Lastname is required'], // ตำแหน่งเป็นข้อมูลที่จำเป็น
+//    required: [false, 'Lastname is required'], // ตำแหน่งเป็นข้อมูลที่จำเป็น
   },
   grade: {
     type: String,
-    required: [false, 'Grade is required'], // ตำแหน่งเป็นข้อมูลที่จำเป็น
+//    required: [false, 'Grade is required'], // ตำแหน่งเป็นข้อมูลที่จำเป็น
   },
   age: {
     type: String,
-    required: [false, 'Age is required'], // ตำแหน่งเป็นข้อมูลที่จำเป็น
+//    required: [false, 'Age is required'], // ตำแหน่งเป็นข้อมูลที่จำเป็น
   },
   role: {
     type: String,
