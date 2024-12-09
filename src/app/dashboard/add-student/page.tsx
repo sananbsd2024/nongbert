@@ -1,4 +1,4 @@
-"use client";
+'use client'
 
 import { useState } from 'react';
 
@@ -21,7 +21,7 @@ export default function UserForm() {
     setStatus('');
 
     try {
-      const res = await fetch('/api/student', {
+      const res = await fetch('/api/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
@@ -89,3 +89,6 @@ export default function UserForm() {
     </div>
   );
 }
+
+
+
