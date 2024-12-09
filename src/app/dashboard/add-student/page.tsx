@@ -1,145 +1,159 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { useState } from "react";
 
 const AddStudent = () => {
-  const router = useRouter();
-  const [form, setForm] = useState({
-    fristname: '',
-    lastname: '',
-    role: '',
-    grade: '',
-    age: '',
+  const [formData, setFormData] = useState({
+    fristname: "",
+    lastname: "",
+    g_level: "",
+    grade: "",
+    age: "",
   });
+  const [message, setMessage] = useState("");
 
-  const [error, setError] = useState('');
-  const [success, setSuccess] = useState('');
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
-    setSuccess('');
 
     try {
-      const res = await fetch('/api/students"', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(form),
+      const res = await fetch("/api/students", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
       });
 
       const data = await res.json();
+      setMessage(data.message);
 
       if (res.ok) {
-        setSuccess('เพิ่มบุคลากรเรียบร้อยแล้ว');
-        setForm({ 
-          fristname: '',
-          lastname: '',
-          role: '',
-          grade: '',
-          age: '',
+        setFormData({
+          fristname: "",
+          lastname: "",
+          g_level: "",
+          grade: "",
+          age: "",
         });
-        router.push('/'); // กลับไปหน้าหลักหลังจากเพิ่มข้อมูล
-      } else {
-        setError(data.error || 'เกิดข้อผิดพลาด');
       }
-    } catch (error) {
-      console.error('Error adding employee:', error);
-      setError('เกิดข้อผิดพลาด');
+    } catch (err) {
+      console.error("Error:", err);
+      setMessage("Something went wrong");
     }
   };
 
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-3xl font-bold mb-6 text-center">เพิ่มข้อมูลนักเรียน</h1>
-
       <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
-        {error && <p className="text-red-500 mb-4">{error}</p>}
-        {success && <p className="text-green-500 mb-4">{success}</p>}
-
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">ชื่อ</label>
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700"
+          >
+            ชื่อ
+          </label>
           <input
             type="text"
             name="fristname"
-            value={form.fristname}
+            placeholder="ชื่อ"
+            value={formData.fristname}
             onChange={handleChange}
             required
             className="w-full p-2 border rounded"
           />
         </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">นามสกุล</label>
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700"
+          >
+            นามสกุล
+          </label>
           <input
             type="text"
             name="lastname"
-            value={form.lastname}
+            placeholder="นามสกุล"
+            value={formData.lastname}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border rounded"
+          />
+        </div>
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700"
+          >
+            อายุ
+          </label>
+          <input
+            type="number"
+            name="age"
+            placeholder="อายุ"
+            value={formData.age}
             onChange={handleChange}
             required
             className="w-full p-2 border rounded"
           />
         </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">เลือก</label>
-          
+        <div>
+          <label
+            htmlFor="category"
+            className="block text-sm font-medium text-gray-700"
+          >
+            Category
+          </label>
           <select
-            name="role"
-            value={form.role}
+            id="g_level"
+            name="g_level"
+            value={formData.g_level}
             onChange={handleChange}
             required
             className="w-full p-2 border rounded"
           >
-
-            <option value="">เลือกหมวดหมู่</option>
-            <option value="director">อนุบาล 1</option>
-            <option value="teacher">อนุบาล 2</option>
-            <option value="staff">อนุบาล 3</option>
-          </select>          
-        </div>
-        
-          <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">อายุ</label>
-          <input
-            type="number"
-            name="age"
-            value={form.age}
-            onChange={handleChange}
-            required
-            className="w-full p-2 border rounded"
-          />
+            <option value="">-- เลือกระดับชั้น --</option>
+            <option value="อนุบาล 1">อนุบาล 1</option>
+            <option value="อนุบาล 2">อนุบาล 2</option>
+            <option value="อนุบาล 3">อนุบาล 3</option>
+          </select>
         </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">เกรด</label>
+        <div>
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700"
+          >
+            เกรด
+          </label>
           <input
             type="text"
             name="grade"
-            value={form.grade}
+            placeholder="เกรด"
+            value={formData.grade}
             onChange={handleChange}
             required
             className="w-full p-2 border rounded"
           />
         </div>
 
-        
-        <button
-          type="submit"
-          className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
-        >
-          เพิ่มข้อมูล
-        </button>
-        
+        {/* Submit Button */}
+        <div>
+          <button
+            type="submit"
+            className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+          >
+            Submit
+          </button>
+        </div>
       </form>
+      {message && <p>{message}</p>}
     </div>
   );
 };
 
-export default AddStudent
+export default AddStudent;
