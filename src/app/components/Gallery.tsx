@@ -10,7 +10,7 @@ const GalleryPage = () => {
         ภาพกิจกรรม
       </h1>
 
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div className="max-w-sm rounded overflow-hidden shadow-lg p-2">
           <img
             className="w-full"
