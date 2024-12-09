@@ -3,7 +3,7 @@ import React from 'react'
 const CommandsPage = () => {
   return (
     <div>
-      <h1>คณะกรรมการสถานศึกษา</h1>
+      <h1>ทำเนียบผู้อำนวยการ</h1>
     </div>
   )
 }
