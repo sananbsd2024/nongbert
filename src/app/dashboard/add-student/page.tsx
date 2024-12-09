@@ -1,159 +1,89 @@
-"use client";
+import { useState } from 'react';
 
-import { useState } from "react";
-
-const AddStudent = () => {
+export default function UserForm() {
   const [formData, setFormData] = useState({
-    fristname: "",
-    lastname: "",
-    g_level: "",
-    grade: "",
-    age: "",
+    firstname: '',
+    lastname: '',
+    role: '',
+    grade: '',
+    age: '',
   });
-  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState('');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setStatus('');
 
     try {
-      const res = await fetch("/api/students", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const res = await fetch('/api/student', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
       });
 
       const data = await res.json();
-      setMessage(data.message);
-
-      if (res.ok) {
-        setFormData({
-          fristname: "",
-          lastname: "",
-          g_level: "",
-          grade: "",
-          age: "",
-        });
+      if (data.success) {
+        setStatus('User added successfully!');
+        setFormData({ firstname: '', lastname: '', role: '', grade: '', age: '' });
+      } else {
+        setStatus(data.message || 'Failed to add user.');
       }
-    } catch (err) {
-      console.error("Error:", err);
-      setMessage("Something went wrong");
+    } catch (error) {
+      setStatus('An error occurred. Please try again later.');
     }
   };
 
   return (
-    <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">เพิ่มข้อมูลนักเรียน</h1>
-      <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700"
-          >
-            ชื่อ
-          </label>
-          <input
-            type="text"
-            name="fristname"
-            placeholder="ชื่อ"
-            value={formData.fristname}
-            onChange={handleChange}
-            required
-            className="w-full p-2 border rounded"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700"
-          >
-            นามสกุล
-          </label>
-          <input
-            type="text"
-            name="lastname"
-            placeholder="นามสกุล"
-            value={formData.lastname}
-            onChange={handleChange}
-            required
-            className="w-full p-2 border rounded"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700"
-          >
-            อายุ
-          </label>
-          <input
-            type="number"
-            name="age"
-            placeholder="อายุ"
-            value={formData.age}
-            onChange={handleChange}
-            required
-            className="w-full p-2 border rounded"
-          />
-        </div>
-
-        <div>
-          <label
-            htmlFor="category"
-            className="block text-sm font-medium text-gray-700"
-          >
-            Category
-          </label>
-          <select
-            id="g_level"
-            name="g_level"
-            value={formData.g_level}
-            onChange={handleChange}
-            required
-            className="w-full p-2 border rounded"
-          >
-            <option value="">-- เลือกระดับชั้น --</option>
-            <option value="อนุบาล 1">อนุบาล 1</option>
-            <option value="อนุบาล 2">อนุบาล 2</option>
-            <option value="อนุบาล 3">อนุบาล 3</option>
-          </select>
-        </div>
-
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-700"
-          >
-            เกรด
-          </label>
-          <input
-            type="text"
-            name="grade"
-            placeholder="เกรด"
-            value={formData.grade}
-            onChange={handleChange}
-            required
-            className="w-full p-2 border rounded"
-          />
-        </div>
-
-        {/* Submit Button */}
-        <div>
-          <button
-            type="submit"
-            className="inline-flex justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-          >
-            Submit
-          </button>
-        </div>
+    <div>
+      <h1>Add User</h1>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="firstname"
+          placeholder="First Name"
+          value={formData.firstname}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="lastname"
+          placeholder="Last Name"
+          value={formData.lastname}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="role"
+          placeholder="Role"
+          value={formData.role}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="grade"
+          placeholder="Grade"
+          value={formData.grade}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="number"
+          name="age"
+          placeholder="Age"
+          value={formData.age}
+          onChange={handleChange}
+          required
+        />
+        <button type="submit">Submit</button>
       </form>
-      {message && <p>{message}</p>}
+      {status && <p>{status}</p>}
     </div>
   );
-};
-
-export default AddStudent;
+}
