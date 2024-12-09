@@ -1,5 +1,11 @@
 import LeftSidebarPage from "../components/LeftSidebar";
 
+export const metadata = {
+  title: 'โรงเรียนบ้านหนองเบิด',
+  description: 'โรงเรียนบ้านหนองเบิด ตำบลเมืองน้อย อำเภอธวัชบุรี จังหวัดร้อยเอ็ด',
+  keywords: 'Nongberd School, โรงเรียนบ้านหนองเบิด, หนองเบิด',
+}
+
 export default function KkschLayout({
   children,
 }: {
