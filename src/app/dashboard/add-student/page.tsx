@@ -6,11 +6,11 @@ import { useRouter } from 'next/navigation';
 const AddStudent = () => {
   const router = useRouter();
   const [form, setForm] = useState({
-    fristname: "",
-    lastname: "",
-    g_level: "",
-    grade: "",
-    age: "",
+    fristname: '',
+    lastname: '',
+    g_level: '',
+    grade: '',
+    age: '',
   });
 
   const [error, setError] = useState('');
@@ -39,11 +39,11 @@ const AddStudent = () => {
       if (res.ok) {
         setSuccess('เพิ่มบุคลากรเรียบร้อยแล้ว');
         setForm({ 
-          fristname: "",
-          lastname: "",
-          g_level: "",
-          grade: "",
-          age: "",
+          fristname: '',
+          lastname: '',
+          g_level: '',
+          grade: '',
+          age: '',
         });
         router.push('/'); // กลับไปหน้าหลักหลังจากเพิ่มข้อมูล
       } else {
@@ -57,7 +57,7 @@ const AddStudent = () => {
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">เพิ่มบุคลากรใหม่</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">เพิ่มข้อมูลนักเรียน</h1>
 
       <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
         {error && <p className="text-red-500 mb-4">{error}</p>}
@@ -76,7 +76,7 @@ const AddStudent = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block text-sm font-medium mb-1">ตำแหน่ง</label>
+          <label className="block text-sm font-medium mb-1">นามสกุล</label>
           <input
             type="text"
             name="lastname"
@@ -99,9 +99,9 @@ const AddStudent = () => {
           >
 
             <option value="">เลือกหมวดหมู่</option>
-            <option value="director">อนุบาล</option>
-            <option value="teacher">อนุบาล</option>
-            <option value="staff">อนุบาล</option>
+            <option value="director">อนุบาล 1</option>
+            <option value="teacher">อนุบาล 2</option>
+            <option value="staff">อนุบาล 3</option>
           </select>          
         </div>
         
