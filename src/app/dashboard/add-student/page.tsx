@@ -50,14 +50,14 @@ const AddStudents = () => {
         setError(data.error || 'เกิดข้อผิดพลาด');
       }
     } catch (error) {
-      console.error('Error adding employee:', error);
+      console.error('Error adding student:', error);
       setError('เกิดข้อผิดพลาด');
     }
   };
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-6 text-center">เพิ่มบุคลากรใหม่</h1>
+      <h1 className="text-3xl font-bold mb-6 text-center">เพิ่มข้อมูลนักเรียน</h1>
 
       <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
         {error && <p className="text-red-500 mb-4">{error}</p>}
@@ -140,7 +140,7 @@ const AddStudents = () => {
           type="submit"
           className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
         >
-          เพิ่มบุคลากร
+          เพิ่มข้อมูล
         </button>
         
       </form>
