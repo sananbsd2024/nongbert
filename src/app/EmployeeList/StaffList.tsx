@@ -24,7 +24,7 @@ const StaffList = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4 text-center">ภารโรง</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center text-gray-700">ภารโรง</h2>
       <div className="flex justify-center">
         {staff.map((person) => (
           <div key={person._id} className="p-4 border rounded shadow-md justify-center">
@@ -33,8 +33,8 @@ const StaffList = () => {
               alt={person.name}
               className="w-32 h-32 object-cover rounded-full mx-auto"
             />
-            <h3 className="text-lg font-bold text-center mt-2">{person.name}</h3>
-            <p className="text-center">{person.position}</p>
+            <h3 className="text-lg font-bold text-center mt-2 text-gray-700">{person.name}</h3>
+            <p className="text-center text-gray-700">{person.position}</p>
           </div>
         ))}
       </div>
