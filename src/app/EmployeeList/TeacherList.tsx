@@ -24,7 +24,7 @@ const TeacherList = () => {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold mb-4 text-center">ครูผู้สอน</h2>
+      <h2 className="text-2xl font-bold mb-4 text-center text-gray-700">ครูผู้สอน</h2>
       <div className="flex justify-center">
         {teachers.map((teacher) => (
           <div key={teacher._id} className="p-4 border rounded shadow-md">
@@ -33,8 +33,8 @@ const TeacherList = () => {
               alt={teacher.name}
               className="w-32 h-32 object-cover rounded-full mx-auto"
             />
-            <h3 className="text-lg font-bold text-center mt-2">{teacher.name}</h3>
-            <p className="text-center">{teacher.position}</p>
+            <h3 className="text-lg font-bold text-center mt-2 text-gray-700">{teacher.name}</h3>
+            <p className="text-center text-gray-700">{teacher.position}</p>
           </div>
         ))}
       </div>
