@@ -1,5 +1,5 @@
 import NewsListPage from "./Newslist";
-import NewsSellListPage from "./Newssell";
+// import NewsSellListPage from "./Newssell";
 import ShowGalleryPage from "./ShowGallery";
 
 export default function RightContentAreaPage() {
@@ -7,7 +7,7 @@ export default function RightContentAreaPage() {
         <div>
             <NewsListPage />
             <ShowGalleryPage />
-            <NewsSellListPage />
+            {/* <NewsSellListPage /> */}
         </div>
     );
 }
