@@ -7,7 +7,7 @@ const AddNews = () => {
   // const router = useRouter();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  // const [photo, setPhoto] = useState("");
+  const [photo, setPhoto] = useState("");
   const [files, setFiles] = useState([{ name: "", link: "" }]);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -17,7 +17,7 @@ const AddNews = () => {
       const res = await fetch(`/api/news`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ title, description, files }),
+        body: JSON.stringify({ title, description, files, photo }),
       });
 
       if (!res.ok) {
@@ -101,7 +101,7 @@ const AddNews = () => {
           ))}
         </div>
 
-        {/* <div className="mb-4">
+         <div className="mb-4">
           <label className="block text-sm font-medium mb-1">ลิงก์รูปภาพ</label>
           <input
             type="url"
@@ -111,7 +111,7 @@ const AddNews = () => {
             required
             className="w-full p-2 border rounded"
           />
-        </div> */}
+        </div>
 
         <button
           type="button"
