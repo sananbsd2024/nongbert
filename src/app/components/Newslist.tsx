@@ -10,11 +10,12 @@ interface News {
   title: string;
   description: string;
   files: File[];
+  photo: string;
   createdAt: string;
 }
 
 async function fetchNews(): Promise<News[]> {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://nongberd-v3.vercel.app';
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || '';
   const res = await fetch(`${baseUrl}/api/news`, { cache: 'no-store' });
 
   if (!res.ok) {
@@ -39,6 +40,14 @@ export default async function NewsListPage() {
             className="bg-white shadow-md rounded-lg p-6 border border-gray-200"
           >
             {/* <h2 className="font-semibold mb-2">{news.title}</h2> */}
+            <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
+            <img
+              src={news.photo}
+              className="max-w-xs transition duration-300 ease-in-out hover:scale-110"
+              alt="Louvre"
+            />
+          </div>
+            {/* <p>{news.photo}</p> */}
             <p className="text-gray-600 mb-4">{news.description}</p>
             <div>
               {/* <h3 className="font-medium text-gray-800">ไฟล์แนบ:</h3> */}
