@@ -1,13 +1,13 @@
 import NewsListPage from "./Newslist";
 import NewsSellListPage from "./Newssell";
-import GalleryPage from "./Gallery";
+import ShowGalleryPage from "./ShowGallery";
 
 export default function RightContentAreaPage() {
     return (
         <div>
             <NewsListPage />
+            <ShowGalleryPage />
             <NewsSellListPage />
-            <GalleryPage />
         </div>
     );
 }
