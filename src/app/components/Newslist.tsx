@@ -33,24 +33,22 @@ export default async function NewsListPage() {
     <div className="container mx-auto p-4">
       <h1 className="rounded text-xl font-bold mb-6 bg-blue-600 p-2 mx-auto 
       flex justify-center text-white">ข่าวประชาสัมพันธ์</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {newsList.map((news) => (
           <div
             key={news._id}
             className="bg-white shadow-md rounded-lg p-6 border border-gray-200"
           >
-            {/* <h2 className="font-semibold mb-2">{news.title}</h2> */}
             <div className="relative max-w-xs overflow-hidden bg-cover bg-no-repeat">
             <img
               src={news.photo}
               className="max-w-xs transition duration-300 ease-in-out hover:scale-110"
               alt="Louvre"
+              width={300}
             />
           </div>
-            {/* <p>{news.photo}</p> */}
             <p className="text-gray-600 mb-4">{news.description}</p>
             <div>
-              {/* <h3 className="font-medium text-gray-800">ไฟล์แนบ:</h3> */}
               <ul className="list-disc list-inside">
                 {news.files.map((file, index) => (
                   <li key={index}>
