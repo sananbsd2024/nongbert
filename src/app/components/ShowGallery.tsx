@@ -15,7 +15,7 @@ interface News {
 }
 
 async function fetchNews(): Promise<News[]> {
-  const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000';
+  const baseUrl = process.env.NEXT_PUBLIC_API_URL || '';
   const res = await fetch(`${baseUrl}/api/gallery`, { cache: 'no-store' });
 
   if (!res.ok) {
