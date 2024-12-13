@@ -27,7 +27,7 @@ const Navbar = () => {
     <div className='bg-gray-200 flex justify-between w-full h-full
     items-center mx-auto px-4 text-blue-800 rounded-xl'>
       {/* Logo */}
-      <h1 className='w-full text-3xl font-bold text-blue-900'>Nong Berd</h1>
+      <h1 className='w-full text-3xl font-bold text-blue-900'></h1>
 
       {/* Desktop Navigation */}
       <ul className='hidden md:flex'>
