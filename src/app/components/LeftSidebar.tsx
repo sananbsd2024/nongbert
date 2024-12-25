@@ -1,8 +1,9 @@
+import React from "react";
+import MenuList2Page from "./Menulist2";
+import MenuList3Page from "./Menulist3";
 import MenuListPage from "./Menulists";
-import MenuList2Page from "./Menulists2";
-import MenuList3Page from "./Menulists3";
 
-export default function LeftSidebarPage() {
+export default function LeftSidebarPage(): JSX.Element {
   return (
     <div>
       <br />
