@@ -25,16 +25,16 @@ const Navbar = () => {
 
   return (
     <div className='bg-gray-200 flex justify-between w-full h-full
-    items-center mx-auto px-4 text-blue-800 rounded-xl'>
+    items-center mx-auto px-6 text-blue-800 rounded-xl'>
       {/* Logo */}
-      <h1 className='w-full text-3xl font-bold text-blue-900'></h1>
+      <h1 className='w-full text-3xl font-bold text-blue-900'>Nongberd</h1>
 
       {/* Desktop Navigation */}
       <ul className='hidden md:flex'>
         {navItems.map(item => (
           <li
             key={item.id}
-            className='p-2 hover:bg-[#00df9a] rounded-xl m-2 w-32
+            className='p-2 hover:bg-[#7976fa] rounded-xl m-1.5 w-32
             cursor-pointer duration-300 hover:text-black'
           >
             <Link href={item.link}>{item.text}</Link>
@@ -56,7 +56,7 @@ const Navbar = () => {
         }
       >
         {/* Mobile Logo */}
-        <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>nongberd</h1>
+        <h1 className='w-full text-3xl font-bold text-[#00df9a] m-4'>Nongberd</h1>
 
         {/* Mobile Navigation Items */}
         {navItems.map(item => (
