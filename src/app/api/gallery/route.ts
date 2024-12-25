@@ -26,8 +26,6 @@ export async function GET() {
   }
 }
 
-
-// Update a gallery item by ID
 export async function PUT(request: Request) {
   try {
     await connectToDatabase();
