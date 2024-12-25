@@ -4,10 +4,17 @@ import { useState } from "react";
 import GalleryList from "./GalleryList";
 import AddOrUpdateGallery from "./AddOrUpdateGallery";
 
-const GalleryPage = () => {
-  const [editingGallery, setEditingGallery] = useState(null);
+interface Gallery {
+  id: number;
+  title: string;
+  description?: string;
+  [key: string]: any; // Allow additional optional fields
+}
 
-  const handleEdit = (gallery: any) => {
+const GalleryPage: React.FC = () => {
+  const [editingGallery, setEditingGallery] = useState<Gallery | null>(null);
+
+  const handleEdit = (gallery: Gallery) => {
     setEditingGallery(gallery);
   };
 
