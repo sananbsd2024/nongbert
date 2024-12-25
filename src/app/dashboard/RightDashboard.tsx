@@ -2,8 +2,9 @@ import React from "react";
 
 const RightDashboardPage = () => {
   return (
-    <div className="w-[250px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-6">
-      <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center gap-6">
+
+      <div className="w-[250px] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="/dashboard/add-employee">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             เพิ่มข้อมูลบุคลากร
@@ -35,7 +36,7 @@ const RightDashboardPage = () => {
         </a>
       </div>
 
-      <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-[250px] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="/dashboard/add-newslist">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             ข่าวประชาสัมพันธ์
@@ -67,7 +68,7 @@ const RightDashboardPage = () => {
         </a>
       </div>
 
-      <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-[250px] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="/dashboard/add-newssell">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             ข่าวประกวดราคา
@@ -99,7 +100,7 @@ const RightDashboardPage = () => {
         </a>
       </div>
 
-      <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-[250px] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="/dashboard/add-student">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             ข้อมูลนักเรียน
@@ -132,7 +133,7 @@ const RightDashboardPage = () => {
       </div>
 
 
-      <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-[250px] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="/dashboard/show-students">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             แสดงข้อมูลนักเรียน
@@ -166,7 +167,7 @@ const RightDashboardPage = () => {
 
 
 
-      <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-[250px] max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="/dashboard/add-gallery">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           ภาพกิจกรรม
