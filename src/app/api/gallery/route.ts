@@ -26,3 +26,27 @@ export async function GET() {
   }
 }
 
+
+// Update a gallery item by ID
+export async function PUT(request: Request) {
+  try {
+    await connectToDatabase();
+    const { id, ...updateData } = await request.json();
+
+    if (!id) {
+      return NextResponse.json({ success: false, error: 'ID is required' }, { status: 400 });
+    }
+
+    const updatedItem = await GalleryModel.findByIdAndUpdate(id, updateData, { new: true });
+
+    if (!updatedItem) {
+      return NextResponse.json({ success: false, error: 'Item not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ success: true, data: updatedItem }, { status: 200 });
+  } catch (error) {
+    console.error('Error updating gallery item:', error);
+    return NextResponse.json({ success: false, error: 'Internal Server Error' }, { status: 500 });
+  }
+}
+
